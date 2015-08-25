@@ -19,9 +19,12 @@ use Exception;
  */
 class SimpleEventBus implements EventBusInterface
 {
-    private $eventListeners = array();
-    private $queue          = array();
-    private $isPublishing   = false;
+    /**
+     * @var \Broadway\EventHandling\EventListenerInterface[]
+     */
+    protected $eventListeners = array();
+    protected $queue          = array();
+    protected $isPublishing   = false;
 
     /**
      * {@inheritDoc}
